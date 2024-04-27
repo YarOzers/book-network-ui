@@ -34,7 +34,7 @@ export class LoginComponent {
     // Убедимся, что очищаем массив ошибок перед новым запросом
     this.errorMsg = [];
 
-    this.authService.authenticate({ body: this.authRequest }).subscribe({
+    this.authService.authenticate({body: this.authRequest}).subscribe({
       next: (response) => {
         if (response?.token) {
           this.tokenService.token = response.token; // Сохраняем токен
@@ -60,6 +60,7 @@ export class LoginComponent {
   }
 
   register() {
+    console.log('registerClick')
     this.router.navigate(['register'])
   }
 }
