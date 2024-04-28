@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+import {TokenService} from "../../../../services/token/token.service";
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,12 @@ import {RouterLink} from "@angular/router";
 })
 export class MenuComponent implements AfterViewInit {
 
+  constructor(private tokenService: TokenService,
+              private router: Router) {
+  }
   logout() {
+      this.tokenService.clearToken();
+      this.router.navigate(['login'])
 
 
   }

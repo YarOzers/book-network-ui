@@ -2,7 +2,16 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
-
+::-webkit-scrollbar-track {
+  background-color: #fff; /*Цвет скролла*/
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px; /*Закругление ползунка*/
+  background-color: #ccc; /*Цвет ползунка*/
+}
+::-webkit-scrollbar {
+  width: 6px; /*Толщина скролла*/
+}
 body {
   font-family: 'Roboto', sans-serif;
 }

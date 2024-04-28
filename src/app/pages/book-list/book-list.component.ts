@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf} from "@angular/common";
 import {PageResponseBookResponse} from "../../services/models/page-response-book-response";
 import {BookService} from "../../services/services/book.service";
 import {Router} from "@angular/router";
+import {BookCardComponent} from "../../modules/book/components/book-card/book-card.component";
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    BookCardComponent
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
 })
-export class BookListComponent {
+export class BookListComponent implements OnInit{
   bookResponse: PageResponseBookResponse = {};
   page: number = 0;
   size: number = 5;
@@ -34,7 +36,7 @@ export class BookListComponent {
       size: this.size
     }).subscribe({
       next: (books)=>{
-
+          console.log()
       }
     })
   }

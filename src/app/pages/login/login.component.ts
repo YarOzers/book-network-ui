@@ -38,7 +38,7 @@ export class LoginComponent {
       next: (response) => {
         if (response?.token) {
           this.tokenService.token = response.token; // Сохраняем токен
-          this.router.navigate(['books']); // Переходим к другому маршруту
+          this.router.navigate(['home']); // Переходим к другому маршруту
         } else {
           console.warn('Token not found');
         }
