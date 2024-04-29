@@ -1,20 +1,16 @@
 <div id="card-id"
-  class="card"
-  style="width: 20rem;"
+     class="card"
+     style="width: 20rem;"
 >
   <img height="200" [src]="bookCover" class="card-img-top " alt="...">
   <div class="card-body overflow-y-auto">
-    <h5 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fa-solid fa-book"></i>&nbsp;{{book.title}} Some title
-    </h5>
+    <h5 class="card-title fs-6 text-nowrap fw-bold mb-1"><i class="fa-solid fa-book"></i>&nbsp;{{book.title}}</h5>
     <h5 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-user-check"></i>&nbsp;{{book.authorName}}
-      Some author</h5>
-    <h6 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-code"></i>&nbsp;{{book.isbn}}
-      Some isbn</h6>
-    <h6 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-user"></i>&nbsp;{{book.isbn}}
-      Some user</h6>
+    </h5>
+    <h6 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-code"></i>&nbsp;{{book.isbn}}</h6>
+    <h6 class="card-subtitle fs-6 text-secondary mb-1"><i class="fa-solid fa-user"></i>&nbsp;{{book.isbn}}</h6>
     <hr>
-    <p class="card-text ">{{book.synopsis}} <span>Lorem ipsum dolo</span>
-    </p>
+    <p class="card-text ">{{book.synopsis}}</p>
   </div>
   <div class="card-footer d-flex justify-content-between align-items-center gap-2">
     <div class="d-flex gap-2">

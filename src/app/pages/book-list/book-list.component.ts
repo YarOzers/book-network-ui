@@ -4,6 +4,7 @@ import {PageResponseBookResponse} from "../../services/models/page-response-book
 import {BookService} from "../../services/services/book.service";
 import {Router} from "@angular/router";
 import {BookCardComponent} from "../../modules/book/components/book-card/book-card.component";
+import {findAllBooks} from "../../services/fn/book/find-all-books";
 
 @Component({
   selector: 'app-book-list',
@@ -15,10 +16,11 @@ import {BookCardComponent} from "../../modules/book/components/book-card/book-ca
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
 })
-export class BookListComponent implements OnInit{
+export class BookListComponent implements OnInit {
   bookResponse: PageResponseBookResponse = {};
   page: number = 0;
   size: number = 5;
+
 
   constructor(private bookService: BookService,
               private router: Router) {
@@ -35,9 +37,39 @@ export class BookListComponent implements OnInit{
       page: this.page,
       size: this.size
     }).subscribe({
-      next: (books)=>{
-          console.log()
+      next: (books) => {
+        console.log()
       }
     })
+  }
+
+  goToFirstPage() {
+    this.page = 0;
+    this.findAllBooks();
+  }
+
+  goToPreviousPage() {
+    this.page--;
+    this.findAllBooks();
+  }
+
+  goToPage(page: number) {
+    this.page = page;
+    this.findAllBooks();
+  }
+
+  goToNextPage() {
+    this.page++;
+    this.findAllBooks();
+  }
+
+  goToLastPage() {
+    this.page = this.bookResponse.totalPages as number -1;
+    this.findAllBooks();
+  }
+
+  get isLastPage(): boolean {
+    return this.page == this.bookResponse.totalPages as number - 1;
+
   }
 }
