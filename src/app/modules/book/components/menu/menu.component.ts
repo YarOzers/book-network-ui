@@ -12,13 +12,15 @@ import {TokenService} from "../../../../services/token/token.service";
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent implements AfterViewInit {
+  userName: string = '';
 
   constructor(private tokenService: TokenService,
               private router: Router) {
   }
+
   logout() {
-      this.tokenService.clearToken();
-      this.router.navigate(['login'])
+    this.tokenService.clearToken();
+    this.router.navigate(['login'])
 
 
   }

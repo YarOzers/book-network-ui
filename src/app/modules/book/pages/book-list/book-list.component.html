@@ -35,7 +35,7 @@
         </a>
       </li>
       <li class="page-item"
-          *ngFor="let _ of [].constructor(this.bookResponse.totalPages - 1); let pageIndex = index"
+          *ngFor="let _ of [].constructor(this.bookResponse.totalPages); let pageIndex = index"
       >
         <a href="javascript: void (0)"
            (click)="goToPage(pageIndex)"

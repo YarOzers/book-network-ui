@@ -1,12 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
-import {PageResponseBookResponse} from "../../services/models/page-response-book-response";
-import {BookService} from "../../services/services/book.service";
+import {PageResponseBookResponse} from "../../../../services/models/page-response-book-response";
+import {BookService} from "../../../../services/services/book.service";
 import {Router} from "@angular/router";
-import {BookCardComponent} from "../../modules/book/components/book-card/book-card.component";
-import {findAllBooks} from "../../services/fn/book/find-all-books";
-import {borrowBook} from "../../services/fn/book/borrow-book";
-import {BookResponse} from "../../services/models/book-response";
+import {BookCardComponent} from "../../components/book-card/book-card.component";
+import {BookResponse} from "../../../../services/models/book-response";
 
 @Component({
   selector: 'app-book-list',
@@ -25,6 +23,7 @@ export class BookListComponent implements OnInit {
   size: number = 5;
   message: string = '';
   level = 'success';
+  pages: any = []
 
 
   constructor(private bookService: BookService,
@@ -32,9 +31,7 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.findAllBooks()
-    {
-    }
+    this.findAllBooks();
   }
 
   private findAllBooks() {
@@ -43,7 +40,10 @@ export class BookListComponent implements OnInit {
       size: this.size
     }).subscribe({
       next: (books) => {
-        console.log()
+        this.bookResponse = books;
+        this.pages = Array(this.bookResponse.totalPages)
+          .fill(0)
+          .map((x, index) => index)
       }
     })
   }
