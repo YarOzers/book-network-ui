@@ -6,7 +6,7 @@ import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.compo
 
 export const routes: Routes = [
   {
-    path: '', title: 'Login',
+    path: 'login', title: 'Login',
     component: LoginComponent
   },
   {
