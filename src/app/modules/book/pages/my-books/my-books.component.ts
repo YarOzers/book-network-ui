@@ -86,7 +86,7 @@ export class MyBooksComponent implements OnInit {
   }
 
   editBook(book: BookResponse) {
-
+    this.router.navigate(['home', 'my-books', 'manage', book.id])
 
   }
 }
