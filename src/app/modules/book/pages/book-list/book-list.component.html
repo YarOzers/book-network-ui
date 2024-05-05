@@ -3,7 +3,9 @@
      class="alert"
      [class.alert-danger]="level === 'error'"
      [class.alert-success]="level === 'success'"
-> {{message}}</div>
+>
+  {{message}}
+</div>
 <hr>
 <div class="d-flex justify-content-start gap-2 flex-wrap">
   <app-book-card *ngFor="let book of bookResponse.content"

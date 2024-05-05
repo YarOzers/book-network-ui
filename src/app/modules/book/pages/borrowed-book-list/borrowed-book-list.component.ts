@@ -5,7 +5,7 @@ import {PageResponseBorrowedBookResponse} from "../../../../services/models/page
 import {BookService} from "../../../../services/services/book.service";
 import {FeedbackRequest} from "../../../../services/models/feedback-request";
 import {FormsModule} from "@angular/forms";
-import {RatingComponent} from "../rating/rating.component";
+import {RatingComponent} from "../../components/rating/rating.component";
 import {RouterLink} from "@angular/router";
 import {FeedbackService} from "../../../../services/services/feedback.service";
 
@@ -39,7 +39,6 @@ export class BorrowedBookListComponent implements OnInit {
   returnBorrowedBook(book: BorrowedBookResponse) {
     this.selectedBook = book;
     this.feedbackRequest.bookId = book.id as number;
-
   }
 
   ngOnInit(): void {

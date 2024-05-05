@@ -70,7 +70,7 @@ export class ManageBookComponent implements OnInit {
           }
         }).subscribe({
           next: () => {
-            this.router.navigate(['/home/my-books']);
+            this.router.navigate(['/books/my-books']);
           }
         })
       }, error: (err) => {
