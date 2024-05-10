@@ -7,6 +7,10 @@ import {authGuard} from "./services/guard/auth.guard";
 
 export const routes: Routes = [
   {
+    path: '', redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
     path: 'login', title: 'Login',
     component: LoginComponent
   },
@@ -22,11 +26,9 @@ export const routes: Routes = [
     path: 'books',
     loadChildren: () => import('./modules/book/book.module').then(m => m.BookModule),
     canActivate: [authGuard]
-  }
-
-
-  ,{
-  path: '**', title: '404',
+  },
+  {
+    path: '**', title: '404',
     component: PageNotFoundComponent
   }
 ];

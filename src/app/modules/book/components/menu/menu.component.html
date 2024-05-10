@@ -36,7 +36,7 @@
         <!-- Этот элемент указывает на "My books". -->
 
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" routerLink="my-waiting-list">
+          <a class="nav-link " aria-current="page" routerLink="waiting-list">
             <i class="fas fa-hourglass-start"></i>&nbsp;Waiting list
           </a>
         </li>
@@ -68,7 +68,7 @@
         <!-- Кнопка для отправки формы, с иконкой поиска. -->
 
         <span>Welcome</span>
-        <span class="text-capitalize fw-bold">Yaroslav</span>
+        <span class="text-capitalize fw-bold">{{decodedToken.fullName.firstname}}</span>
         <!-- Приветствие с именем пользователя, где `text-capitalize` делает первый символ заглавным, а `fw-bold` делает текст полужирным. -->
 
         <button class="btn btn-link" type="button" (click)="logout()"><i class="fas fa-door-open"></i></button>
